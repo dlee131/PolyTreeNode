@@ -1,8 +1,8 @@
 class PolyTreeNode
-    
-    def initialize(value)
-        @parent = nil
-        @children = []
+    attr_reader :parent, :children, :value
+    def initialize(value, children = [], parent = nil)
+        @parent = parent
+        @children = children
         @value = value
     end
 
