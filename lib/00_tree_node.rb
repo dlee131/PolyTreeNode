@@ -7,10 +7,14 @@ class PolyTreeNode
     end
 
     def parent=(node)
-        @parent = node.parent
-        @parent.children << node
-        node.parent = @parent
-        @parent.children << node
+        @parent = node
+        
+        
+        # node.parent = @parent
+        # @parent.children << node
     end
-
+    
+    def add_child(node)
+        node.parent = self
+    end
 end
