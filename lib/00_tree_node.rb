@@ -7,8 +7,8 @@ class PolyTreeNode
     end
 
     def parent=(node)
-        @parent = node
-        
+        @parent = node  
+        @parent.children << self
         
         # node.parent = @parent
         # @parent.children << node
@@ -16,5 +16,15 @@ class PolyTreeNode
     
     def add_child(node)
         node.parent = self
+    end
+
+    def remove_child(node)
+        raise "error" if !@children.include?(node)
+        node.parent = nil
+    end
+
+    private
+    def inspect
+        { "value" => @value, "parent" => @parent }.inspect
     end
 end
